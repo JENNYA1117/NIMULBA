@@ -1,53 +1,62 @@
-import { motion } from "framer-motion";
-import { Github, Mail } from "lucide-react";
-
-export default function App() {
-  return (
-    <main className="min-h-screen bg-gradient-to-tr from-zinc-900 via-gray-900 to-black text-white font-sans">
-      <section className="flex flex-col justify-center items-center h-screen text-center px-4">
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juyoung's Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // 애니메이션용: Fade In
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".fade-in-up").forEach((el, i) => {
+          setTimeout(() => {
+            el.classList.remove("opacity-0", "translate-y-5");
+            el.classList.add("opacity-100", "translate-y-0");
+          }, 300 * i);
+        });
+      });
+    </script>
+    <style>
+      .fade-in-up {
+        transition: all 0.8s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-zinc-900 via-gray-900 to-black text-white font-sans">
+    <main class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+      <h1
+        class="fade-in-up opacity-0 translate-y-5 text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500"
+      >
+        Hi, I'm Juyoung
+      </h1>
+      <p
+        class="fade-in-up opacity-0 translate-y-5 text-lg md:text-2xl text-gray-300 max-w-xl mb-6"
+      >
+        A minimalist, clean and powerful homepage built for GitHub Pages.
+      </p>
+      <div class="fade-in-up opacity-0 translate-y-5 flex gap-4">
+        <a
+          href="mailto:youremail@example.com"
+          class="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
         >
-          Hi, I'm Juyoung
-        </motion.h1>
-
-        <motion.p
-          className="text-lg md:text-2xl text-gray-300 max-w-xl mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          📧 Contact
+        </a>
+        <a
+          href="https://github.com/yourhandle"
+          target="_blank"
+          class="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
         >
-          A minimalist, clean and powerful homepage built for GitHub Pages.
-        </motion.p>
-
-        <motion.div
-          className="flex gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          <a
-            href="mailto:youremail@example.com"
-            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
-          >
-            <Mail className="inline-block w-4 h-4 mr-2" /> Contact
-          </a>
-          <a
-            href="https://github.com/yourhandle"
-            target="_blank"
-            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
-          >
-            <Github className="inline-block w-4 h-4 mr-2" /> GitHub
-          </a>
-        </motion.div>
-      </section>
-
-      <footer className="text-center text-gray-500 py-6 text-sm">
-        © {new Date().getFullYear()} Juyoung Ahn. All rights reserved.
-      </footer>
+          💻 GitHub
+        </a>
+      </div>
     </main>
-  );
-}
+    <footer class="text-center text-gray-500 py-6 text-sm">
+      © <span id="year"></span> Juyoung Ahn. All rights reserved.
+    </footer>
+
+    <script>
+      // Footer에 연도 자동 삽입
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
