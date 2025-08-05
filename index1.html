@@ -21,19 +21,45 @@
           transform: translateY(0);
         }
       }
+
+      body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/Eternal_Sunshine_of_the_Spotless_Mind.png/220px-Eternal_Sunshine_of_the_Spotless_Mind.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+      }
     </style>
   </head>
-  <body class="bg-gradient-to-tr from-zinc-900 via-gray-900 to-black text-white font-sans">
-
-    <main class="min-h-screen flex flex-col justify-center items-center text-center px-4">
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500 fade-up">
+  <body class="text-white font-sans">
+    <main class="min-h-screen flex flex-col justify-center items-center text-center px-4 backdrop">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-pink-400 fade-up">
         Welcome to NIMULBA
       </h1>
 
       <p class="text-lg md:text-2xl text-gray-300 max-w-xl mb-6 fade-up delay-1">
-        I'm Juyoung Ahn — This is my digital space for ideas, projects, and experiments.
+        "Not everything is meant to be remembered — but this, perhaps, is."
       </p>
 
-      <div class="flex gap-4 fade-up delay-2">
-        <a
-          href="mailto:jiahnn12@na
+      <div class="flex gap-6 fade-up delay-2">
+        <a href="https://github.com/jiahnn12" target="_blank" title="GitHub">
+          <i class="lucide lucide-github text-3xl hover:text-pink-400 transition"></i>
+        </a>
+        <a href="mailto:jiahnn12@naver.com" title="Email">
+          <i class="lucide lucide-mail text-3xl hover:text-indigo-300 transition"></i>
+        </a>
+        <a href="https://blog.naver.com/jiahnn12" target="_blank" title="Blog">
+          <i class="lucide lucide-globe text-3xl hover:text-green-300 transition"></i>
+        </a>
+      </div>
+
+      <footer class="mt-12 text-sm text-gray-400">
+        &copy; <script>document.write(new Date().getFullYear())</script> Juyoung Ahn. All rights reserved.
+      </footer>
+    </main>
+  </body>
+</html>
