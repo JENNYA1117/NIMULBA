@@ -1,9 +1,53 @@
-<html>
-  <head>
-    <title>Jenny's h0megage</title>
-  </head>
-  <body>
-    <h1>뉘신지 모르겠지만 썩 돌아가쇼.</h1>
-    <p>오늘의 짝꿍:수진</p>
-  </body>
-</html>
+import { motion } from "framer-motion";
+import { Github, Mail } from "lucide-react";
+
+export default function App() {
+  return (
+    <main className="min-h-screen bg-gradient-to-tr from-zinc-900 via-gray-900 to-black text-white font-sans">
+      <section className="flex flex-col justify-center items-center h-screen text-center px-4">
+        <motion.h1
+          className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-500"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Hi, I'm Juyoung
+        </motion.h1>
+
+        <motion.p
+          className="text-lg md:text-2xl text-gray-300 max-w-xl mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          A minimalist, clean and powerful homepage built for GitHub Pages.
+        </motion.p>
+
+        <motion.div
+          className="flex gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          <a
+            href="mailto:youremail@example.com"
+            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
+          >
+            <Mail className="inline-block w-4 h-4 mr-2" /> Contact
+          </a>
+          <a
+            href="https://github.com/yourhandle"
+            target="_blank"
+            className="px-4 py-2 border border-gray-600 rounded-full hover:bg-white hover:text-black transition"
+          >
+            <Github className="inline-block w-4 h-4 mr-2" /> GitHub
+          </a>
+        </motion.div>
+      </section>
+
+      <footer className="text-center text-gray-500 py-6 text-sm">
+        © {new Date().getFullYear()} Juyoung Ahn. All rights reserved.
+      </footer>
+    </main>
+  );
+}
